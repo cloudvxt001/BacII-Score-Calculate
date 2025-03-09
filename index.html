@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="icon/letter-a.png">
+  <title>BacII Score Calculator - Input</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>BacII Score Calculator</h1>
+    <div class="form-group">
+      <label for="stream">Choose Stream:</label>
+      <select id="stream">
+        <option value="science">Science</option>
+        <option value="social">Social Science</option>
+      </select>
+    </div>
+
+    <div id="science-subjects" class="subjects">
+      <h2>Science Subjects</h2>
+      <div class="form-group"><label>Math:</label><input type="number" id="math-science" max="125" placeholder="125"></div>
+      <div class="form-group"><label>Biology:</label><input type="number" id="bio" max="75" placeholder="75"></div>
+      <div class="form-group"><label>Option Subject:</label><input type="number" id="his-science" max="50" placeholder="50"></div>
+      <div class="form-group"><label>Chemistry:</label><input type="number" id="chem" max="75" placeholder="75"></div>
+      <div class="form-group"><label>Khmer:</label><input type="number" id="khmer-science" max="75" placeholder="75"></div>
+      <div class="form-group"><label>Physics:</label><input type="number" id="physic" max="75" placeholder="75"></div>
+      <div class="form-group"><label>Foreign Languages:</label><input type="number" id="english-science" max="50" placeholder="50"></div>
+    </div>
+
+    <div id="social-subjects" class="subjects">
+      <h2>Social Science Subjects</h2>
+      <div class="form-group"><label>Math:</label><input type="number" id="math-social" max="75" placeholder="75"></div>
+      <div class="form-group"><label>Khmer:</label><input type="number" id="khmer-social" max="125" placeholder="125"></div>
+      <div class="form-group"><label>History:</label><input type="number" id="his-social" max="75" placeholder="75"></div>
+      <div class="form-group"><label>Option Subject:</label><input type="number" id="geology" max="50" placeholder="50"></div>
+      <div class="form-group"><label>Geography:</label><input type="number" id="geography" max="50" placeholder="75"></div>
+      <div class="form-group"><label>Civic Ethics:</label><input type="number" id="civic" max="75" placeholder="75"></div>
+      <div class="form-group"><label>Foreign Languages:</label><input type="number" id="english-social" max="50" placeholder="50"></div>
+    </div>
+
+    <button id="calculate-btn">Calculate</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

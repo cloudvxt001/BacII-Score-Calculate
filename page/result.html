@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BacII Score Calculator - Result</title>
+  <link rel="icon" href="../icon/result.png">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>BacII Score Result</h1>
+    <div id="result">
+      <p>Total Score: <span id="total-score">0</span></p>
+      <p>Overall Grade: <span id="grade">-</span></p>
+      <p id="pass-fail-message"></p>
+      <h2>Subject Grades</h2>
+      <div id="subject-grades"></div>
+    </div>
+    <button id="back-btn">Back to Input</button>
+  </div>
+
+  <script>
+    // Retrieve data from local storage
+    const totalScore = localStorage.getItem('totalScore');
+    const grade = localStorage.getItem('grade');
+    const isPass = localStorage.getItem('isPass') === 'true';
+    const subjectGrades = JSON.parse(localStorage.getItem('subjectGrades'));
+
+    // Display the result
+    document.getElementById('total-score').textContent = totalScore || '0';
+    document.getElementById('grade').textContent = grade || '-';
+
+    // Display pass/fail message
+    const passFailMessage = document.getElementById('pass-fail-message');
+    if (isPass) {
+      passFailMessage.textContent = 'Congratulations! You have passed.';
+      passFailMessage.style.color = '#4CAF50'; // Green color for pass
+    } else {
+      passFailMessage.textContent = 'Sorry, you have failed.';
+      passFailMessage.style.color = '#F44336'; // Red color for fail
+    }
+
+    // Display subject grades
+    const subjectGradesContainer = document.getElementById('subject-grades');
+    if (subjectGrades) {
+      subjectGrades.forEach(subject => {
+        const subjectDiv = document.createElement('div');
+        subjectDiv.className = 'subject-grade';
+        subjectDiv.innerHTML = `<strong>${subject.name}:</strong> ${subject.grade}`;
+        subjectGradesContainer.appendChild(subjectDiv);
+      });
+    }
+
+    // Back button to return to input page
+    document.getElementById('back-btn').addEventListener('click', function () {
+      window.location.href = '../index.html';
+    });
+  </script>
+</body>
+</html>

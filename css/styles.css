@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(-45deg, #ff416c, #ff4b2b, #ff9a44, #8a2be2);
+  background-size: 400% 400%;
+  animation: gradientBG 4s ease infinite;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.container {
+  background: rgba(0, 0, 0, 0.34);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.49);
+  backdrop-filter: blur(16px); /* Adds a blur effect to the container */
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #ff9a44;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #ff4b2b;
+}
+
+.result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.result p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.subjects {
+  display: none;
+}
+
+.subjects.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.subject-grade {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.subject-grade strong {
+  color: #ffcc00;
+}
+
+/* Custom Select Dropdown */
+select {
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none; /* Remove default arrow for Safari */
+  -moz-appearance: none; /* Remove default arrow for Firefox */
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ff4b2b;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232575fc'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+/* Hover Effect */
+select:hover {
+  border-color: #ff9a44;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Focus Effect */
+select:focus {
+  outline: none;
+  border-color: #6a11cb;
+  box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+}
+
+/* Dropdown Arrow Animation */
+select {
+  transition: background-position 0.3s ease;
+}
+
+select:focus {
+  background-position: right 15px center;
+}
+
+/* Custom Option Styling */
+select option {
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  select {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+/* Pass/Fail Message */
+#pass-fail-message {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 15px 0;
+}
+
+/* Subject Grades */
+.subject-grade {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: rgba(255, 119, 0, 0.336);
+  border-radius: 5px;
+}
+
+.subject-grade strong {
+  color: #ffcc00;
+}
+
